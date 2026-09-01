@@ -1,0 +1,14 @@
+grounder:
+  model_id: microsoft/Florence-2-large-ft
+
+consensus:
+  k_runs: 6
+  iou_cluster_threshold: 0.30
+
+nonconformity_weights:
+  agreement_rate: 0.10
+  consensus_tightness: 0.10
+  segmentation_agreement: 0.40
+  radiometric_plausibility: 0.40
+
+seed: 0

@@ -1,0 +1,20 @@
+{
+  "red": {
+    "threshold": 0.3188272630404348,
+    "target_risk": 0.75,
+    "confidence": 0.9,
+    "n_calibration_claims": 1080,
+    "n_accepted_at_threshold": 0,
+    "n_false_positives_at_threshold": 0,
+    "certified_risk_bound": 0.0
+  },
+  "bright": {
+    "threshold": 0.762982029934302,
+    "target_risk": 0.75,
+    "confidence": 0.9,
+    "n_calibration_claims": 1080,
+    "n_accepted_at_threshold": 486,
+    "n_false_positives_at_threshold": 335,
+    "certified_risk_bound": 0.7423055883959816
+  }
+}

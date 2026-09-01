@@ -1,0 +1,66 @@
+{
+  "consensus_only": {
+    "red": {
+      "calibrated_threshold": 0.021068027118545357,
+      "certified_risk_bound": 0.0,
+      "n_accepted_on_test": 1,
+      "measured_precision_on_test": 0.0,
+      "measured_recall_on_test": 0.0012360939431396785
+    },
+    "bright": {
+      "calibrated_threshold": 0.0263361760002144,
+      "certified_risk_bound": 0.0,
+      "n_accepted_on_test": 1,
+      "measured_precision_on_test": 1.0,
+      "measured_recall_on_test": 0.0004816955684007707
+    }
+  },
+  "consensus_plus_segmentation": {
+    "red": {
+      "calibrated_threshold": 0.038408310110752936,
+      "certified_risk_bound": 0.0,
+      "n_accepted_on_test": 0,
+      "measured_precision_on_test": null,
+      "measured_recall_on_test": 0.0
+    },
+    "bright": {
+      "calibrated_threshold": 0.06885877548453742,
+      "certified_risk_bound": 0.0,
+      "n_accepted_on_test": 0,
+      "measured_precision_on_test": null,
+      "measured_recall_on_test": 0.0
+    }
+  },
+  "consensus_plus_radiometric": {
+    "red": {
+      "calibrated_threshold": 0.19997452855164996,
+      "certified_risk_bound": 0.0,
+      "n_accepted_on_test": 1,
+      "measured_precision_on_test": 0.0,
+      "measured_recall_on_test": 0.0006180469715698393
+    },
+    "bright": {
+      "calibrated_threshold": 0.4952757750568709,
+      "certified_risk_bound": 0.7462596875463929,
+      "n_accepted_on_test": 288,
+      "measured_precision_on_test": 0.3576388888888889,
+      "measured_recall_on_test": 0.19291907514450868
+    }
+  },
+  "full_gate": {
+    "red": {
+      "calibrated_threshold": 0.3188272630404348,
+      "certified_risk_bound": 0.0,
+      "n_accepted_on_test": 0,
+      "measured_precision_on_test": null,
+      "measured_recall_on_test": 0.0
+    },
+    "bright": {
+      "calibrated_threshold": 0.762982029934302,
+      "certified_risk_bound": 0.7423055883959816,
+      "n_accepted_on_test": 231,
+      "measured_precision_on_test": 0.36363636363636365,
+      "measured_recall_on_test": 0.15534682080924855
+    }
+  }
+}

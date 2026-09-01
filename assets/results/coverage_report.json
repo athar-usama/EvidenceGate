@@ -1,0 +1,32 @@
+{
+  "red": {
+    "target_risk": 0.75,
+    "certified_confidence": 0.9,
+    "n_verified_claims_on_test": 0,
+    "n_correct_of_verified": 0,
+    "measured_precision": null,
+    "measured_precision_90pct_CI": [
+      null,
+      null
+    ],
+    "contract_held": null,
+    "recall_of_true_lesion_instances": 0.0,
+    "n_lesion_instances_hit": 0,
+    "n_lesion_instances_total": 1618
+  },
+  "bright": {
+    "target_risk": 0.75,
+    "certified_confidence": 0.9,
+    "n_verified_claims_on_test": 231,
+    "n_correct_of_verified": 84,
+    "measured_precision": 0.36363636363636365,
+    "measured_precision_90pct_CI": [
+      0.31095096030708463,
+      0.41896282800258317
+    ],
+    "contract_held": true,
+    "recall_of_true_lesion_instances": 0.15534682080924855,
+    "n_lesion_instances_hit": 645,
+    "n_lesion_instances_total": 4152
+  }
+}

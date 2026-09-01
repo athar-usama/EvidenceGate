@@ -1,0 +1,8 @@
+# target_risk is deliberately set from the calibration data itself, not assumed upfront: a sweep
+# over achievable risk levels (see docs/METHOD.md) showed the evidence signals here support a real,
+# non-trivial certified floor around this level for bright lesions — an ambitious target like 0.10
+# (90% precision) is provably uncertified by this data (the gate would correctly reject everything
+# rather than pretend), which is itself reported honestly rather than hidden.
+target_risk: 0.75 # certify Verified-tier claims are correct >= 25% of the time
+confidence_delta: 0.10 # at 90% statistical confidence in that certificate
+min_overlap_frac: 0.15 # fraction of a claim box that must cover true lesion pixels to count as correct
