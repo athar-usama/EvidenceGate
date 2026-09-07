@@ -1,6 +1,6 @@
 """Runs the fully calibrated agent on IDRiD's held-out test split and measures the real coverage.
 
-This is the split that never touched calibration — the numbers this script
+This is the split that never touched calibration, so the numbers this script
 produces are the honest answer to "does the contract actually hold?".
 """
 

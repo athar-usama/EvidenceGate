@@ -44,7 +44,7 @@ def sample_perturbations(
     through `context_ladder` (in pixels) rather than jittering around one fixed crop size.
 
     This matters: most candidates here are only a few pixels wide (microaneurysm scale), so a
-    single fixed crop floor collapses every run into nearly the same image — consensus across
+    single fixed crop floor collapses every run into nearly the same image; consensus across
     K near-identical inputs is not a real independence check, it just measures whether the model
     is deterministic. Stepping through genuinely different fields of view is what lets a real,
     compact lesion stay consistently localized while a spurious classical-CV trigger (a vessel

@@ -2,7 +2,7 @@
 
 Deliberately zero-shot: no medical fine-tuning. The point of the project is the
 trust layer around a general-purpose grounding model, not a medical detector,
-so a stronger domain model would undersell the contribution. See docs/METHOD.md.
+so a stronger domain model would undersell the contribution.
 """
 
 from __future__ import annotations

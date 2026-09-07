@@ -16,7 +16,7 @@ def test_red_lesion_proposer_finds_dark_round_spot():
     # Radius kept below the black-hat structuring element (9px): black-hat only picks up
     # dark features smaller than the structuring element, matching microaneurysm-scale lesions.
     # denoise_ksize disabled here: a median blur this wide would erase a spot this small on a
-    # perfectly flat synthetic background — see test_denoise_ksize_suppresses_noise_not_a_real_blob.
+    # perfectly flat synthetic background, see test_denoise_ksize_option_runs_without_error.
     cv2.circle(bgr, (150, 150), 3, (40, 30, 90), thickness=-1)  # dark reddish blob
     candidates = propose_red_lesions(bgr, min_area=2, denoise_ksize=0)
     assert any(c.box.x1 < 150 < c.box.x2 and c.box.y1 < 150 < c.box.y2 for c in candidates)
@@ -29,7 +29,7 @@ def test_denoise_ksize_option_runs_without_error():
     cv2.circle(bgr, (150, 150), 8, (40, 30, 90), thickness=-1)
     # Real-world impact of denoise_ksize (suppressing sensor/JPEG noise so genuine, subtler
     # lesions rank above spurious high-contrast noise) is validated empirically against actual
-    # IDRiD images, not reproducible in a small synthetic image — this just checks both code
+    # IDRiD images, not reproducible in a small synthetic image; this just checks both code
     # paths execute cleanly.
     propose_red_lesions(bgr, min_area=1, denoise_ksize=0)
     propose_red_lesions(bgr, min_area=1, denoise_ksize=9)

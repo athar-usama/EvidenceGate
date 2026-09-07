@@ -49,7 +49,7 @@ def iou(a: Box, b: Box) -> float:
 
 
 def center_distance_norm(a: Box, b: Box) -> float:
-    """Center distance normalized by the mean box diagonal — used when boxes barely overlap."""
+    """Center distance normalized by the mean box diagonal, used when boxes barely overlap."""
     ax, ay = a.center()
     bx, by = b.center()
     dist = ((ax - bx) ** 2 + (ay - by) ** 2) ** 0.5

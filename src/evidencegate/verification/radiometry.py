@@ -1,4 +1,4 @@
-"""Colour/contrast plausibility scoring — the third independent evidence signal.
+"""Colour/contrast plausibility scoring, the third independent evidence signal.
 
 Neither the proposer nor the segmentation cross-check looks at colour directly
 in Lab space; this catches cases where geometry and grounding agree but the

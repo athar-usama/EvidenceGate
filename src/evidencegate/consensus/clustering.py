@@ -2,7 +2,7 @@
 
 This is the heart of Consensus-Gated Grounding: LocateAnything treats a box's
 four coordinates as one atomic unit to decode together. Here the atomic unit is
-raised a level — a *claim* is only admitted once independent decodes of the
+raised a level: a *claim* is only admitted once independent decodes of the
 same underlying candidate agree with each other in both geometry and
 frequency (how many of the K runs produced it at all).
 
@@ -11,7 +11,7 @@ K runs here deliberately vary how much surrounding context the grounder sees
 (see grounding/perturbations.py's context ladder), and a wider crop can shift
 the model's natural box *size* even when it is looking at the same underlying
 feature. Requiring tight IoU across very different fields of view would
-penalize scale, not disagreement about location — center distance is the more
+penalize scale, not disagreement about location; center distance is the more
 scale-robust signal of whether independent views are actually pointing at the
 same place.
 """
@@ -54,7 +54,7 @@ class ConsensusCluster:
         return total / count if count else 0.0
 
     def mean_pairwise_center_agreement(self) -> float:
-        """Scale-robust counterpart to `mean_pairwise_iou` — see module docstring."""
+        """Scale-robust counterpart to `mean_pairwise_iou`, see module docstring."""
         boxes = [h.box for h in self.hits]
         if len(boxes) < 2:
             return 1.0 if boxes else 0.0
@@ -76,11 +76,11 @@ class ConsensusCluster:
 
 
 def cluster_hits(hits: list[RunHit], iou_threshold: float = 0.3, center_distance_threshold: float = 0.6) -> list[ConsensusCluster]:
-    """Greedy single-linkage clustering — small K makes this exact and fast.
+    """Greedy single-linkage clustering; small K makes this exact and fast.
 
     Two hits are joined if they agree on either criterion (tight IoU, for hits from similar
     context scales, or close normalized center distance, robust across very different fields
-    of view) — see module docstring.
+    of view), see module docstring.
     """
     n = len(hits)
     parent = list(range(n))

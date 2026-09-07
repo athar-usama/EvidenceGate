@@ -25,7 +25,7 @@ def propose_bright_lesions(
     max_candidates: int = 20,
     denoise_ksize: int = 9,
 ) -> list[Candidate]:
-    """See red_lesion.py's `denoise_ksize` docstring — the same noise-floor problem shows up here."""
+    """See red_lesion.py's `denoise_ksize` docstring, the same noise-floor problem shows up here."""
     field_mask = retinal_field_mask(bgr)
     green = enhanced_green_channel(bgr, field_mask)
     if denoise_ksize:

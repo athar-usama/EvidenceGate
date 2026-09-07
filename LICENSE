@@ -24,5 +24,9 @@ SOFTWARE.
 
 This license covers the source code in this repository only. The IDRiD
 dataset referenced by scripts/download_data.py is distributed separately by
-its original authors under CC BY 4.0 and is not redistributed here; see
-docs/METHOD.md for citation and attribution.
+its original authors under CC BY 4.0 and is not redistributed here.
+
+Citation: Porwal, P., Pachade, S., Kamble, R., Kokare, M., Deshmukh, G.,
+Sahasrabuddhe, V., & Meriaudeau, F. Indian Diabetic Retinopathy Image Dataset
+(IDRiD): A Database for Diabetic Retinopathy Screening Research. Data, 3(3),
+25, 2018.

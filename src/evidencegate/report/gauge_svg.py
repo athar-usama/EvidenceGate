@@ -1,4 +1,4 @@
-"""Renders a standalone SVG 'trust ring' for one claim — used instead of a bar/line chart."""
+"""Renders a standalone SVG 'trust ring' for one claim, used instead of a bar/line chart."""
 
 from __future__ import annotations
 

@@ -1,5 +1,5 @@
 """Ablates each evidence signal's contribution, reusing the raw signals already collected by
-run_calibration.py / run_pipeline.py — no need to re-run the VLM. For each weight configuration:
+run_calibration.py / run_pipeline.py, no need to re-run the VLM. For each weight configuration:
 recalibrate the threshold on the train split, then measure precision/recall on the untouched
 test split. This isolates what each independent evidence source is actually buying the gate.
 """

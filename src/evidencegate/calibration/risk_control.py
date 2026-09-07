@@ -2,7 +2,7 @@
 
 Selects the most permissive nonconformity threshold, among a pre-specified
 grid of candidates, whose Clopper-Pearson upper confidence bound on the
-false-discovery rate still meets the target risk level — the same statistical
+false-discovery rate still meets the target risk level. This is the same statistical
 family as split conformal prediction (Vovk, Gammerman & Shafer, 2005) and
 Learn-Then-Test risk control (Angelopoulos, Bates, Candès, Jordan & Lei,
 2021), simplified to a robust single-parameter search.
@@ -12,8 +12,8 @@ candidate thresholds strictest-to-most-permissive, stop at the first one that
 fails the bound). That is the textbook Learn-Then-Test procedure, but it
 turned out to be fragile here: with `n_grid` candidates tested at a coarse,
 roughly evenly-populated grid, a single unlucky small-sample fluctuation at
-the first eligible (strictest) threshold — for example, a handful of
-accepted claims that happen to all be wrong, purely by chance — permanently
+the first eligible (strictest) threshold (for example, a handful of
+accepted claims that happen to all be wrong, purely by chance) permanently
 halts the search, even when far more permissive thresholds have plenty of
 data and would clear the bound easily. Fixed-sequence testing assumes the
 *true* risk is monotone in the threshold, but at finite sample sizes the
@@ -24,9 +24,9 @@ The fix: evaluate every grid candidate independently (no early stopping) and
 correct for the resulting multiple comparisons with a Bonferroni adjustment
 (each individual test uses confidence `1 - delta / n_grid` instead of
 `1 - delta`), then take the most permissive candidate that still passes. This
-controls the same overall (1 - delta) family-wise validity — for a
+controls the same overall (1 - delta) family-wise validity: for a
 pre-specified, fixed grid, Bonferroni correction is valid regardless of any
-dependence between the tests — while no longer letting one bad grid point
+dependence between the tests, while no longer letting one bad grid point
 veto every more permissive candidate after it.
 """
 
@@ -62,7 +62,7 @@ class CalibrationResult:
 def _min_accepted_for_zero_failures(target_risk: float, delta: float, margin: int = 5) -> int:
     """Smallest n at which a threshold with zero observed failures could possibly clear the bound.
 
-    Below this n, `clopper_pearson_upper(0, n, delta) > target_risk` always — the bound fails purely
+    Below this n, `clopper_pearson_upper(0, n, delta) > target_risk` always: the bound fails purely
     for lack of data, regardless of the true risk.
     """
     if target_risk <= 0 or target_risk >= 1:

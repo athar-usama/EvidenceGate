@@ -10,7 +10,7 @@ dist/
 .pytest_cache/
 .ruff_cache/
 
-# large / generated artifacts — regenerate via scripts/, never commit binaries
+# large / generated artifacts, regenerate via scripts/, never commit binaries
 data/raw/
 data/cache/
 data/*.zip
@@ -23,5 +23,9 @@ data/*.zip
 .DS_Store
 Thumbs.db
 
-# planning notes for this build — kept locally, not part of the published project
+# planning notes for this build, kept locally, not part of the published project
 PLAN.md
+
+# internal method notes, not part of the published project
+docs/
+METHOD.md

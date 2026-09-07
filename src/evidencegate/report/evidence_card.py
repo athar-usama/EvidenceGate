@@ -1,10 +1,10 @@
 """Composes the flagship 'walk one finding through the gate' evidence card for a single claim.
 
 Left panel: the region itself, with every individual consensus-run guess drawn
-as a faint translucent box (a spatial agreement 'glow' — tight overlapping
+as a faint translucent box (a spatial agreement 'glow': tight overlapping
 guesses read as a bright core, scattered guesses read as a diffuse haze), the
 final consensus box on top, and the independent segmentation boundary overlaid.
-Right panel: the evidence breakdown as a trust ring plus a compact spec sheet —
+Right panel: the evidence breakdown as a trust ring plus a compact spec sheet,
 deliberately not a bar chart.
 """
 

@@ -2,7 +2,7 @@
 
 Source: IDRiD (Porwal et al., 2018, CC BY 4.0), redistributed as a directly
 downloadable zip on Zenodo (record 17219542) since the original IEEE DataPort
-host requires an account. See docs/METHOD.md for full citation.
+host requires an account.
 """
 
 from __future__ import annotations

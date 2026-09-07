@@ -1,7 +1,7 @@
 """Renders every image asset used in the README from the already-computed pipeline results.
 
 Re-runs the gated pipeline on a curated handful of test images (needed to get
-full Claim objects with per-run hits and segmentation masks — the summary
+full Claim objects with per-run hits and segmentation masks (the summary
 JSONs from run_pipeline.py only keep the aggregated numbers) and pairs them
 against the naive-baseline JSON to build the hallucination gallery.
 """

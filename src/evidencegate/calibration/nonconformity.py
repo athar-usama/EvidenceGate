@@ -28,8 +28,8 @@ DEFAULT_WEIGHTS = {
 """Pilot data on the calibration split showed agreement_rate/consensus_tightness barely separate
 correct from incorrect claims for this zero-shot backbone (Florence-2 grounds *something* in
 nearly every crop regardless of content), while segmentation_agreement and radiometric_plausibility
-show real, consistent separation — weights reflect that rather than the naive equal split. See
-docs/METHOD.md and the README's "Peeling back each signal" section for the ablation this is based on."""
+show real, consistent separation, so the weights reflect that rather than a naive equal split. See
+the README's "Peeling back each signal" section for the ablation this is based on."""
 
 
 def conformity_score(signals: EvidenceSignals, weights: dict[str, float] = DEFAULT_WEIGHTS) -> float:

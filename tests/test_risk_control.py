@@ -31,7 +31,7 @@ def test_calibration_certifies_separable_synthetic_data():
 
     assert result.certified_risk_bound <= 0.10
     # A target risk of 10% legitimately allows the threshold to reach past the well-separated
-    # correct cluster and admit a controlled amount of contamination — so we only assert that a
+    # correct cluster and admit a controlled amount of contamination, so we only assert that a
     # substantial, non-degenerate accept set was found, not that it stayed FDR-free.
     assert result.n_accepted_at_threshold >= n_correct * 0.5
 
@@ -39,7 +39,7 @@ def test_calibration_certifies_separable_synthetic_data():
 def test_calibration_guarantee_holds_at_the_promised_rate_across_repeated_draws():
     """Monte Carlo check of the guarantee itself: re-run calibration+held-out evaluation many times
     with fresh data: since the guarantee is only a (1 - delta)-confidence statement, some fraction of
-    draws are *expected* to overshoot the target risk — but not much more than about `delta` of them.
+    draws are *expected* to overshoot the target risk, but not much more than about `delta` of them.
     """
     target_risk, delta = 0.10, 0.10
     n_trials = 200

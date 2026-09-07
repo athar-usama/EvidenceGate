@@ -25,7 +25,7 @@ def is_correct_claim(box: Box, family_mask: np.ndarray, min_overlap_frac: float 
 def recall_against_instances(boxes: list[Box], family_mask: np.ndarray) -> tuple[int, int]:
     """Returns (n_lesion_instances_hit, n_lesion_instances_total) via connected components of the mask.
 
-    A lesion instance counts as "hit" if any given box overlaps at least one of its pixels —
+    A lesion instance counts as "hit" if any given box overlaps at least one of its pixels,
     a deliberately generous criterion, since the point here is recall of the *gate*, not of box tightness.
     """
     n_labels, labels = cv2.connectedComponents(family_mask.astype(np.uint8), connectivity=8)

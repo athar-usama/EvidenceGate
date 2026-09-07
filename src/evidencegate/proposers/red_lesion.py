@@ -36,8 +36,8 @@ def propose_red_lesions(
 ) -> list[Candidate]:
     """`denoise_ksize` matters a lot in practice: without it, pixel-scale sensor/JPEG noise
     produces thousands of spuriously "high-contrast" black-hat responses that rank far above
-    genuine (subtler) microaneurysms once sorted by contrast for the `max_candidates` cutoff —
-    a median blur before black-hat suppresses that noise floor without erasing lesion-scale blobs.
+    genuine (subtler) microaneurysms once sorted by contrast for the `max_candidates` cutoff.
+    A median blur before black-hat suppresses that noise floor without erasing lesion-scale blobs.
     """
     field_mask = retinal_field_mask(bgr)
     green = enhanced_green_channel(bgr, field_mask)
@@ -58,7 +58,7 @@ def propose_red_lesions(
         if area < min_area or area > max_area:
             continue
         x, y, w, h = stats[label, cv2.CC_STAT_LEFT : cv2.CC_STAT_HEIGHT + 1]
-        # Crop to the component's own bounding box before masking/contouring — comparing against
+        # Crop to the component's own bounding box before masking/contouring: comparing against
         # the full-resolution label map per component (a ~12MP image here) is the difference
         # between this running in milliseconds and minutes once hundreds of components pass the
         # area filter.

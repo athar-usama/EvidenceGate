@@ -3,7 +3,7 @@
 Deliberately a *different* classical technique from the candidate proposers
 (GrabCut graph-cut segmentation vs. top-hat/black-hat morphology) so that this
 verification signal doesn't just re-derive the same evidence the proposer
-already used — it's the "invoke a specialized segmentation tool" step from the
+already used. It's the "invoke a specialized segmentation tool" step from the
 source post, and it needs to be able to disagree with the grounding stage.
 """
 
@@ -22,13 +22,13 @@ class SegmentationResult:
     mask: np.ndarray  # binary mask, same size as the padded crop
     crop_box: Box  # padded crop region in original-image coordinates
     segmented_box: Box | None  # tight bounding box of the segmented mask, in original-image coords
-    fill_ratio: float  # segmented area / claim-box area — expected near 1 for a well-localized claim
-    foreground_fraction: float  # share of the whole crop marked foreground — near 1 means GrabCut gave up and marked everything, which is not corroboration
+    fill_ratio: float  # segmented area / claim-box area, expected near 1 for a well-localized claim
+    foreground_fraction: float  # share of the whole crop marked foreground, near 1 means GrabCut gave up and marked everything, which is not corroboration
     iou_with_claim: float
 
     @property
     def agreement(self) -> float:
-        """Coverage of the claimed pixels specifically — does GrabCut, run independently and
+        """Coverage of the claimed pixels specifically: does GrabCut, run independently and
         knowing nothing about the grounder's answer, also consider this exact region foreground?
         A degenerate "mark everything foreground" GrabCut run would trivially max this out, so it
         is combined with `foreground_fraction` downstream only as a sanity/debug signal, not
@@ -88,7 +88,7 @@ def segment_claim(bgr: np.ndarray, claim_box: Box, padding_frac: float = 1.2, mi
     segmented_box = Box(
         float(xs.min() + cx1), float(ys.min() + cy1), float(xs.max() + 1 + cx1), float(ys.max() + 1 + cy1)
     )
-    # Coverage of the *claimed* pixels specifically, not just the segmented bounding box overall —
+    # Coverage of the *claimed* pixels specifically, not just the segmented bounding box overall;
     # matters at few-pixel lesion scale, where GrabCut's inferred box rarely matches exactly.
     cbx1, cby1, cbx2, cby2 = claim_box.clip(width, height).as_int_tuple()
     local_x1, local_y1 = max(0, cbx1 - cx1), max(0, cby1 - cy1)

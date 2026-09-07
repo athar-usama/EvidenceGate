@@ -1,9 +1,9 @@
 """Visual-description prompt bank for the grounding stage.
 
 Florence-2 is a general-purpose, zero-shot grounding model with no medical
-fine-tuning — deliberately so (see docs/METHOD.md). It grounds on visual
-appearance, not clinical vocabulary, so the prompt bank describes what a
-lesion *looks like* rather than naming it clinically. Each family has several
+fine-tuning, deliberately so. It grounds on visual appearance, not clinical
+vocabulary, so the prompt bank describes what a lesion *looks like* rather
+than naming it clinically. Each family has several
 paraphrases; sampling different paraphrases across the K consensus runs is
 one of the two sources of decoding diversity (the other is crop/scale jitter).
 """
