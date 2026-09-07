@@ -207,28 +207,19 @@ Two honest findings came out of this, not the one originally expected:
 
 ## Where the gate is honest about failing
 
-- **Weak-to-moderate discriminative signal, not a strong one.** The evidence sources here
-  separate correct from incorrect claims well enough to certify a real, held-out-validated
-  25% floor for bright lesions, not well enough for anything close to 90%. That ceiling
-  belongs to the zero-shot backbone and classical CV signals used, not to the calibration
-  procedure itself (see the ablation above).
-- **A calibrated floor can undershoot an unaudited baseline's point estimate on a given run**;
+- The evidence sources here separate correct from incorrect claims well enough to certify a
+  real, held-out-validated 25% floor for bright lesions, not well enough for anything close
+  to 90%. That ceiling belongs to the zero-shot backbone and classical CV signals used, not
+  to the calibration procedure itself (see the ablation above).
+- A calibrated floor can undershoot an unaudited baseline's point estimate on a given run;
   see "Does the contract hold?" above. The value of calibration is the guarantee, not a
   promise of the highest number in the room.
-- **Small calibration/test sets.** 54 calibration images, 27 test images, from IDRiD's
-  official split. Enough to demonstrate the procedure and get an honest answer; not enough
-  for a population-level clinical claim. Every measured rate above ships with a confidence
-  interval for exactly this reason.
-- **Claim-level, not image-level, independence.** Claims from the same fundus photo share
-  illumination, camera, and patient, so they are not truly exchangeable with each other.
-  The guarantee is evaluated at the claim level, standard practice in the
-  conformal-prediction-for-detection literature, but worth naming rather than burying.
-- **A zero-shot ceiling.** Florence-2 has never seen a retina. The gate raises the confidence
-  you can place in what a general-purpose grounder reports; it cannot manufacture recall the
-  base model never had.
-- **Not a diagnostic device.** A research artifact demonstrating a trust-calibration
-  mechanism against public segmentation ground truth. No clinical validation, no diagnostic
-  claim, anywhere.
+- 54 calibration images and 27 test images from IDRiD's official split are enough to
+  demonstrate the procedure and get an honest answer; not enough for a population-level
+  clinical claim. Every measured rate above ships with a confidence interval for exactly
+  this reason.
+- Florence-2 has never seen a retina. The gate raises the confidence you can place in what
+  a general-purpose grounder reports; it cannot manufacture recall the base model never had.
 
 ---
 
